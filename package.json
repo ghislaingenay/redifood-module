@@ -1,0 +1,19 @@
+{
+  "name": "redifood-module",
+  "version": "1.0.0",
+  "description": "This repository is used to share codes for redifood in the differents kubernetes pods of the applications (each services) by using npm packages or git submodules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghislaingenay/redifood-module.git"
+  },
+  "author": "Ghislain Genay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghislaingenay/redifood-module/issues"
+  },
+  "homepage": "https://github.com/ghislaingenay/redifood-module#readme"
+}
