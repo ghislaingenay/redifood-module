@@ -3,9 +3,9 @@ import { ECurrency, ELanguage } from "./global.interface";
 
 export interface ISettingsApi {
   user: mongoose.Types.ObjectId;
-  currency: ECurrency; // Change to ECurrency later
-  vat: ELanguage;
-  language: string; // Change to ELanguage
+  currency: ECurrency;
+  vat: number;
+  language: ELanguage; 
   haveFoodDescription: boolean;
   haveFoodImage: boolean;
 }
