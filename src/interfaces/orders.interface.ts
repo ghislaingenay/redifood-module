@@ -1,5 +1,5 @@
-import { ECurrency } from "./auth.interface";
 import { IFoodApi, IFoodDB } from "./foods.interface";
+import { ECurrency } from "./global.interface";
 
 export enum EOrderStatus {
   CREATED = "created",
@@ -7,7 +7,6 @@ export enum EOrderStatus {
   AWAITING_PAYMENT = "awaiting payment",
   COMPLETE = "completed",
 }
-
 
 export interface IOrderApi {
   _id?: string;
