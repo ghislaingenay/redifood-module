@@ -1,5 +1,5 @@
 export interface IFoodApi {
-  itemId: number;
+  id: number;
   itemName: string;
   itemPhoto: string;
   itemPrice: number;
@@ -9,7 +9,7 @@ export interface IFoodApi {
   itemQuantity: number;
 }
 export interface IFoodDB {
-  item_id: number;
+  id: number;
   item_name: string;
   item_photo: string;
   item_price: number;
