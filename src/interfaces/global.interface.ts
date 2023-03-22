@@ -5,11 +5,11 @@ export interface IGetServerSideData<T = any, K = any> {
 }
 
 export enum ECurrency {
-  USD = "USD",
-  EUR = "EUR",
+  USD = 'USD',
+  EUR = 'EUR',
 }
 
 export enum ELanguage {
-  ENGLISH = "en",
-  FRENCH = "fr",
+  ENGLISH = 'en',
+  FRENCH = 'fr',
 }
