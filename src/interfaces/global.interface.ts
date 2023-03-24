@@ -1,7 +1,8 @@
 export interface IGetServerSideData<T = any, K = any> {
-  results: T | null;
+  results?: T | null;
   message: string;
   params?: K;
+  statusCode?: number;
 }
 
 export enum ECurrency {
