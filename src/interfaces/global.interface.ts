@@ -1,6 +1,6 @@
 export interface IGetServerSideData<T = any, K = any> {
   results?: T | null;
-  message: string;
+  message: string | any;
   params?: K;
   statusCode?: number;
 }
