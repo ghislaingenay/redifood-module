@@ -1,3 +1,19 @@
+export interface IExtraApi {
+  id?: number;
+  extraName: string;
+  extraOrder: number;
+  extraDescription?: string;
+  sectionId: number;
+}
+
+export interface IExtraDB {
+  id?: number;
+  extra_name: string;
+  extra_order: number;
+  extra_description: string;
+  section_id: number;
+}
+
 export interface IFoodApi {
   id?: number;
   itemName: string;
@@ -7,6 +23,17 @@ export interface IFoodApi {
   itemSection: number;
   itemExtra: number;
   itemQuantity: number;
+}
+
+export interface IFoodDB {
+  id?: number;
+  item_name: string;
+  item_photo: string;
+  item_price: number;
+  item_description: string;
+  item_section: number;
+  item_extra: number;
+  item_quantity: number;
 }
 
 export interface IFoodGetApi {
@@ -31,13 +58,15 @@ export interface IFoodOrder {
   itemQuantity: number;
 }
 
-export interface IFoodDB {
+export interface ISectionFoodApi {
   id?: number;
-  item_name: string;
-  item_photo: string;
-  item_price: number;
-  item_description: string;
-  item_section: number;
-  item_extra: number;
-  item_quantity: number;
+  sectionOrder: number;
+  sectionName: string;
+  sectionDescription?: string;
+}
+export interface ISectionFoodDB {
+  id?: number;
+  section_order: number;
+  section_name: string;
+  section_description?: string;
 }
