@@ -23,7 +23,7 @@ export interface IFoodApi {
   itemSection: number;
   itemExtra: number;
   itemQuantity: number;
-  itemCreated: Date;
+  itemCreated?: Date;
 }
 
 export interface IFoodDB {
@@ -35,7 +35,7 @@ export interface IFoodDB {
   item_section: number;
   item_extra: number;
   item_quantity: number;
-  item_created: Date;
+  item_created?: Date;
 }
 
 export interface IFoodGetApi {
@@ -47,6 +47,7 @@ export interface IFoodGetApi {
   itemSection: { id: number; sectionName: string };
   itemExtra: { id: number; extraName: string };
   itemQuantity: number;
+  itemCreated?: Date;
 }
 
 export interface IFoodOrder {
