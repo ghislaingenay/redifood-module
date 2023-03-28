@@ -1,6 +1,7 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface IGetServerSideData<T = any, K = any> {
   results?: T | null;
-  message: string | any;
+  message: string | unknown;
   params?: K;
   statusCode?: number;
 }
@@ -16,11 +17,11 @@ export enum EStatusCodes {
 }
 
 export enum ECurrency {
-  USD = 'USD',
-  EUR = 'EUR',
+  USD = "USD",
+  EUR = "EUR",
 }
 
 export enum ELanguage {
-  ENGLISH = 'en',
-  FRENCH = 'fr',
+  ENGLISH = "en",
+  FRENCH = "fr",
 }
