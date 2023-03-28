@@ -20,8 +20,8 @@ export interface IFoodApi {
   itemPhoto: string;
   itemPrice: number;
   itemDescription: string;
-  itemSection: number;
-  itemExtra: number;
+  sectionId: number;
+  extraId: number;
   itemQuantity: number;
   itemCreated?: Date;
 }
@@ -32,8 +32,8 @@ export interface IFoodDB {
   item_photo: string;
   item_price: number;
   item_description: string;
-  item_section: number;
-  item_extra: number;
+  section_id: number;
+  extra_id: number;
   item_quantity: number;
   item_created?: Date;
 }
