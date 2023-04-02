@@ -8,7 +8,7 @@ import {
   KafkaMessage,
 } from 'kafkajs';
 // import { sleep } from 'src/sleep';
-import * as retry from 'async-retry';
+import retry from 'async-retry';
 import { IConsumer } from './consumer.interface';
 
 export class KafkajsConsumer implements IConsumer {
@@ -61,7 +61,7 @@ export class KafkajsConsumer implements IConsumer {
         try {
           await retry(async () => onMessage(message), {
             retries: 3,
-            onRetry: (err, attempt) => {
+            onRetry: (err: Error, attempt: number) => {
               this.logger.error(
                 `Error consuming message, executing retry ${attempt}/3`,
                 err,

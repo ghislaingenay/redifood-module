@@ -1,4 +1,4 @@
-import { IFoodDB } from 'redifood-module/src/interfaces';
+import { IFoodDB } from '../../src/interfaces';
 
 export class PhotoCreatedEvent {
   constructor(
