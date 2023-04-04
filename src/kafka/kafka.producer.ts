@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Logger } from '@nestjs/common';
+//@ts-ignore
 import { CompressionTypes, Kafka, Message, Producer } from 'kafkajs';
 import { IProducer } from './producer.interface';
 

@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Logger } from '@nestjs/common';
+
 import {
   Consumer,
   ConsumerConfig,
@@ -6,8 +8,9 @@ import {
   EachMessagePayload,
   Kafka,
   KafkaMessage,
+  //@ts-ignore
 } from 'kafkajs';
-// import { sleep } from 'src/sleep';
+//@ts-ignore
 import retry from 'async-retry';
 import { IConsumer } from './consumer.interface';
 

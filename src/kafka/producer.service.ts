@@ -1,5 +1,8 @@
 import { Injectable, OnApplicationShutdown } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
+//@ts-ignore
 import { Kafka, Message, Producer } from 'kafkajs';
 import { KafkajsProducer } from './kafka.producer';
 import { IProducer } from './producer.interface';
