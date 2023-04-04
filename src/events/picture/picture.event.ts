@@ -1,5 +1,4 @@
-import { ETopics } from 'redifood-module/src/events/subjects.interface';
-import { IFoodDB } from 'redifood-module/src/interfaces';
+import { ETopics, IFoodDB } from '../../interfaces';
 import { Event } from '../base-consumer';
 
 export interface IPhotoCreatedEvent extends Event {
