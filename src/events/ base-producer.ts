@@ -1,14 +1,16 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Logger } from '@nestjs/common';
+//@ts-ignore
 import { CompressionTypes, Kafka, Producer } from 'kafkajs';
 import { Event } from './base-consumer';
 
 export abstract class KafkaProducer<T extends Event> {
   abstract topic: T['topic'];
   protected kafkaClient: Kafka;
-  private logger: Logger;
+  private logger!: Logger;
   private producer: Producer;
 
-  constructor(kafkaClient) {
+  constructor(kafkaClient: Kafka) {
     this.kafkaClient = kafkaClient;
   }
 
@@ -43,7 +45,7 @@ export abstract class KafkaProducer<T extends Event> {
           topic: this.topic,
           messages: [{ value: data }],
         })
-        .catch((err) => {
+        .catch((err: Error) => {
           this.logger.error(err);
           reject(err);
         });

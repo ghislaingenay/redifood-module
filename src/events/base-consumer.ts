@@ -1,16 +1,19 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Logger } from '@nestjs/common';
+
+//@ts-ignore
 import retry from 'async-retry';
+//@ts-nocheck
 import {
   Consumer,
   EachMessagePayload,
   Kafka,
   KafkaMessage,
   Message,
+  //@ts-ignore
 } from 'kafkajs';
-import {
-  EGroupId,
-  ETopics,
-} from 'redifood-module/src/events/subjects.interface';
+import { EGroupId, ETopics } from '../interfaces';
+
 export interface Event {
   data: any;
   topic: ETopics;
@@ -21,11 +24,11 @@ export abstract class KafkaConsumer<T extends Event> {
   abstract groupId: EGroupId;
   abstract onMessage(data: T['data'], msg: Message): void;
   protected kafkaClient: Kafka;
-  private logger: Logger;
+  private logger!: Logger;
   private consumer: Consumer;
   // protected ackWait = 5 * 1000;
 
-  constructor(kafkaClient) {
+  constructor(kafkaClient: Kafka) {
     this.kafkaClient = kafkaClient;
   }
 
@@ -68,7 +71,7 @@ export abstract class KafkaConsumer<T extends Event> {
             },
             {
               retries: 3,
-              onRetry: (err, attempt) => {
+              onRetry: (err: Error, attempt: number) => {
                 this.logger.error(
                   `Error consuming message, executing retry ${attempt}/3`,
                   err,
