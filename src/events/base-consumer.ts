@@ -1,18 +1,11 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { Logger } from '@nestjs/common';
+import { Logger } from "@nestjs/common";
 
 //@ts-ignore
-import retry from 'async-retry';
+import retry from "async-retry";
 //@ts-nocheck
-import {
-  Consumer,
-  EachMessagePayload,
-  Kafka,
-  KafkaMessage,
-  Message,
-  //@ts-ignore
-} from 'kafkajs';
-import { EGroupId, ETopics } from '../interfaces';
+import { Consumer, EachMessagePayload, Kafka, KafkaMessage, Message } from "kafkajs";
+import { EGroupId, ETopics } from "../interfaces";
 
 export interface Event {
   data: any;
@@ -20,12 +13,12 @@ export interface Event {
 }
 
 export abstract class KafkaConsumer<T extends Event> {
-  abstract topic: T['topic'];
+  abstract topic: T["topic"];
   abstract groupId: EGroupId;
-  abstract onMessage(data: T['data'], msg: Message): void;
+  abstract onMessage(data: T["data"], msg: Message): void;
   protected kafkaClient: Kafka;
   private logger!: Logger;
-  private consumer: Consumer;
+  private consumer!: Consumer;
   // protected ackWait = 5 * 1000;
 
   constructor(kafkaClient: Kafka) {
@@ -37,7 +30,7 @@ export abstract class KafkaConsumer<T extends Event> {
     try {
       await this.consumer.connect(); // Try 5 times and if not working => throw an error
     } catch (err) {
-      this.logger.error('failed to connect to kafka', err);
+      this.logger.error("failed to connect to kafka", err);
       // Add a break tim
       await this.connect();
     }
@@ -72,10 +65,7 @@ export abstract class KafkaConsumer<T extends Event> {
             {
               retries: 3,
               onRetry: (err: Error, attempt: number) => {
-                this.logger.error(
-                  `Error consuming message, executing retry ${attempt}/3`,
-                  err,
-                );
+                this.logger.error(`Error consuming message, executing retry ${attempt}/3`, err);
               },
             },
           );
@@ -93,8 +83,6 @@ export abstract class KafkaConsumer<T extends Event> {
   // // How to parse a buffer data.toString('utf8')
   parseMessage(msg: KafkaMessage) {
     const data = msg.value;
-    return typeof data === 'string'
-      ? JSON.parse(data)
-      : JSON.parse(data.toString('utf8'));
+    return typeof data === "string" ? JSON.parse(data) : JSON.parse(data.toString("utf8"));
   }
 }

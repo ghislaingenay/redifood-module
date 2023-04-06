@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { Logger } from '@nestjs/common';
+import { Logger } from "@nestjs/common";
 //@ts-ignore
-import { CompressionTypes, Kafka, Producer } from 'kafkajs';
-import { Event } from './base-consumer';
+import { CompressionTypes, Kafka, Producer } from "kafkajs";
+import { Event } from "./base-consumer";
 
 export abstract class KafkaProducer<T extends Event> {
-  abstract topic: T['topic'];
+  abstract topic: T["topic"];
   protected kafkaClient: Kafka;
   private logger!: Logger;
-  private producer: Producer;
+  private producer!: Producer;
 
   constructor(kafkaClient: Kafka) {
     this.kafkaClient = kafkaClient;
@@ -24,7 +24,7 @@ export abstract class KafkaProducer<T extends Event> {
     try {
       await this.producer.connect(); // Try 5 times and if not working => throw an error
     } catch (err) {
-      this.logger.error('failed to connect to kafka', err);
+      this.logger.error("failed to connect to kafka", err);
       // Add a break tim
       await this.connect();
     }
@@ -34,7 +34,7 @@ export abstract class KafkaProducer<T extends Event> {
     await this.producer.disconnect();
   }
 
-  async publish(data: T['data']): Promise<void> {
+  async publish(data: T["data"]): Promise<void> {
     await this.createProducer();
     await this.connect();
     // Add transaction later
@@ -49,7 +49,7 @@ export abstract class KafkaProducer<T extends Event> {
           this.logger.error(err);
           reject(err);
         });
-      this.logger.log('Event published to subject', this.topic);
+      this.logger.log("Event published to subject", this.topic);
       resolve();
     });
   }
