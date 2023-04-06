@@ -83,6 +83,6 @@ export abstract class KafkaConsumer<T extends Event> {
   // // How to parse a buffer data.toString('utf8')
   parseMessage(msg: KafkaMessage) {
     const data = msg.value;
-    return typeof data === "string" ? JSON.parse(data) : JSON.parse(data.toString("utf8"));
+    return typeof data === "string" ? JSON.parse(data) : JSON.parse(data!.toString("utf8"));
   }
 }
