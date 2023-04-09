@@ -5,12 +5,12 @@ export enum ETopics {
 }
 
 export enum EMicroServices {
-  PICTURE = 'picture',
+  FOOD = 'food',
   UPLOAD = 'upload',
 }
 
 export enum EGroupId {
-  PICTURE = 'picture-group',
+  FOOD = 'foods-group',
   UPLOAD = 'upload-group',
 }
 
