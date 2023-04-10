@@ -1,4 +1,4 @@
-import { IFoodDB } from '../../src/interfaces';
+import { IFoodDB } from '../../interfaces';
 
 export class PhotoCreatedEvent {
   constructor(

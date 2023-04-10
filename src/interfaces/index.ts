@@ -5,4 +5,5 @@ export * from "./msg.interface";
 export * from "./orders.interface";
 export * from "./payment.interface";
 export * from "./settings.interface";
+export * from "./subjects.interface";
 export * from "./upload.interface";
