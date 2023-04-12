@@ -1,4 +1,3 @@
-import { IFoodApi } from './foods.interface';
 import { ECurrency } from './global.interface';
 
 export enum EOrderStatus {
@@ -9,14 +8,14 @@ export enum EOrderStatus {
 }
 
 export interface IOrderApi {
-  _id?: string;
+  id?: string;
   orderNo: number;
   orderStatus: EOrderStatus;
   orderCreatedDate: Date;
   orderCompleteDate: Date;
   tableNumber: number;
   orderTotal: number;
-  orderItems: IFoodApi[];
+  orderItems: IFoodOrder[];
   orderCurrency: ECurrency;
 }
 export interface IOrderDB {
