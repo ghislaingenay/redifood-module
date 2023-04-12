@@ -1,11 +1,11 @@
-import { IFoodApi, IFoodDB } from "./foods.interface";
-import { ECurrency } from "./global.interface";
+import { IFoodApi } from './foods.interface';
+import { ECurrency } from './global.interface';
 
 export enum EOrderStatus {
-  CREATED = "created",
-  UPDATED = "updated",
-  AWAITING_PAYMENT = "awaiting payment",
-  COMPLETE = "completed",
+  CREATED = 'created',
+  UPDATED = 'updated',
+  AWAITING_PAYMENT = 'awaiting payment',
+  COMPLETE = 'completed',
 }
 
 export interface IOrderApi {
@@ -27,6 +27,21 @@ export interface IOrderDB {
   order_complete_date: Date;
   table_number: number;
   order_total: number;
-  order_items: IFoodDB[];
+  order_items: IFoodOrder[];
   order_currency: ECurrency;
+}
+
+export interface INameId {
+  name: string;
+  id: number;
+}
+
+export interface IFoodOrder {
+  id?: number;
+  itemName: string;
+  itemPhoto: string;
+  itemPrice: number;
+  section: INameId;
+  extra: INameId;
+  item_quantity: number;
 }
