@@ -51,7 +51,8 @@ export interface IFoodGetApi {
 }
 
 export interface IFoodOrder {
-  id?: number;
+  foodId: number;
+  id?: string;
   itemName: string;
   itemPhoto: string;
   itemPrice: number;
