@@ -5,6 +5,7 @@ export enum EOrderStatus {
   UPDATED = 'updated',
   AWAITING_PAYMENT = 'awaiting payment',
   COMPLETE = 'completed',
+  CANCELLED = 'cancelled',
 }
 
 export interface IOrderApi {
