@@ -50,18 +50,6 @@ export interface IFoodGetApi {
   itemCreated?: Date;
 }
 
-export interface IFoodOrder {
-  foodId: number;
-  id?: string;
-  itemName: string;
-  itemPhoto: string;
-  itemPrice: number;
-  itemDescription: string;
-  itemSection: string;
-  itemExtra: string;
-  itemQuantity: number;
-}
-
 export interface ISectionFoodApi {
   id?: number;
   sectionOrder: number;
