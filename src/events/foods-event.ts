@@ -8,5 +8,5 @@ export class FoodUpdatedEvent {
   constructor(public readonly food: IFoodOrder) {}
 }
 export class FoodDeletedEvent {
-  constructor(public readonly item_id: IFoodOrder['foodId']) {}
+  constructor(public readonly item_id: IFoodOrder['id']) {}
 }
