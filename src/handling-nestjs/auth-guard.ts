@@ -4,9 +4,9 @@ import {
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
-import jwt from 'jsonwebtoken';
-import { UserPayload } from 'redifood-module/src/interfaces';
+import * as jwt from 'jsonwebtoken';
 import { Observable } from 'rxjs';
+import { UserPayload } from '../interfaces';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
