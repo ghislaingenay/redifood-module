@@ -11,10 +11,11 @@ export interface IOrderApi {
   orderNo: string;
   orderStatus: EOrderStatus;
   orderCreatedDate: Date;
-  orderCompleteDate: Date;
-  tableNumber: number;
+  orderFinished: Date;
+  orderTableNumber: number;
   orderTotal: number;
   orderItems: IFoodOrder[];
+  userId: number;
 }
 
 export interface IOrderDB {
@@ -22,10 +23,11 @@ export interface IOrderDB {
   order_no: number;
   order_status: EOrderStatus;
   order_created_date: Date;
-  order_complete_date: Date;
-  table_number: number;
+  order_finished: Date;
+  order_table_number: number;
   order_total: number;
   order_items: IFoodOrder[];
+  user_id: number;
 }
 
 export interface INameId {
