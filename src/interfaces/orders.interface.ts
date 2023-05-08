@@ -15,7 +15,7 @@ export interface IOrderApi {
   orderTableNumber: number;
   orderTotal: number;
   orderItems: IFoodOrder[];
-  userId: number;
+  userId: string;
 }
 
 export interface IOrderDB {
@@ -27,7 +27,7 @@ export interface IOrderDB {
   order_table_number: number;
   order_total: number;
   order_items: IFoodOrder[];
-  user_id: number;
+  user_id: string;
 }
 
 export interface INameId {
@@ -48,7 +48,7 @@ export interface IFoodOrder {
 export interface IOrderItemsDB {
   id?: number;
   order_id: number;
-  user_id: number;
+  user_id: string;
   food_id: number;
   order_item_quantity: number;
   order_item_name: string;
@@ -57,7 +57,7 @@ export interface IOrderItemsDB {
 export interface IOrderItemsApi {
   id?: number;
   orderId: number;
-  userId: number;
+  userId: string;
   foodId: number;
   orderItem_Quantity: number;
   orderItemName: string;
