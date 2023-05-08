@@ -1,5 +1,3 @@
-import { ECurrency } from './global.interface';
-
 export enum EOrderStatus {
   CREATED = 'created',
   UPDATED = 'updated',
@@ -9,18 +7,18 @@ export enum EOrderStatus {
 }
 
 export interface IOrderApi {
-  id?: string;
-  orderNo: number;
+  id?: number;
+  orderNo: string;
   orderStatus: EOrderStatus;
   orderCreatedDate: Date;
   orderCompleteDate: Date;
   tableNumber: number;
   orderTotal: number;
   orderItems: IFoodOrder[];
-  orderCurrency: ECurrency;
 }
+
 export interface IOrderDB {
-  _id?: string;
+  id?: number;
   order_no: number;
   order_status: EOrderStatus;
   order_created_date: Date;
@@ -28,7 +26,6 @@ export interface IOrderDB {
   table_number: number;
   order_total: number;
   order_items: IFoodOrder[];
-  order_currency: ECurrency;
 }
 
 export interface INameId {
