@@ -45,4 +45,23 @@ export interface IFoodOrder {
   itemQuantity: number;
 }
 
+export interface IOrderItemsDB {
+  id?: number;
+  order_id: number;
+  user_id: number;
+  food_id: number;
+  order_item_quantity: number;
+  order_item_name: string;
+  order_item_price: number;
+}
+export interface IOrderItemsApi {
+  id?: number;
+  orderId: number;
+  userId: number;
+  foodId: number;
+  orderItem_Quantity: number;
+  orderItemName: string;
+  orderItemPrice: number;
+}
+
 export type TOrderType = 'ALL' | 'PAID' | 'NOT_PAID';
