@@ -42,3 +42,5 @@ export interface IFoodOrder {
   extra: INameId;
   item_quantity: number;
 }
+
+export type TOrderType = 'ALL' | 'PAID' | 'NOT_PAID';
