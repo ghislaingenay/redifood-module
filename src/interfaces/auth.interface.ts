@@ -5,3 +5,5 @@ export interface UserPayload {
 }
 
 export type TUser = UserPayload | null;
+
+export type TEmailType = 'VALIDATE_EMAIL' | 'FORGET_PASSWORD';
