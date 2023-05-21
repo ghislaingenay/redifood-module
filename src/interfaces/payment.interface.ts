@@ -20,7 +20,7 @@ export interface IPaymentDB {
   payment_status: EPaymentStatus;
   payment_type: EPaymentType;
   payment_amount: number;
-  payment_date: Date;
+  payment_date: Date | string;
   payment_discount_applied: boolean;
   payment_discount_id: number;
   payment_tax_amount: number;
@@ -33,7 +33,7 @@ export interface IPaymentApi {
   paymentStatus: EPaymentStatus;
   paymentType: EPaymentType;
   paymentAmount: number;
-  paymentDate: Date;
+  paymentDate: Date | string;
   paymentDiscountApplied: boolean;
   paymentDiscountId: number;
   paymentTaxAmount: number;
