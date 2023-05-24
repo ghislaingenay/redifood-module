@@ -36,12 +36,7 @@ export interface INameId {
 }
 
 export interface IFoodOrder {
-  id?: number;
-  itemName: string;
-  itemPhoto: string;
-  itemPrice: number;
-  section: INameId;
-  extra: INameId;
+  itemId?: number;
   itemQuantity: number;
 }
 
