@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface IGetServerSideData<T = any, K = any> {
   results?: T | null;
-  message: string | unknown;
+  message: string;
   params?: K;
   statusCode?: number;
 }
