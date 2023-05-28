@@ -1,9 +1,9 @@
 export enum EOrderStatus {
-  CREATED = 'created',
-  UPDATED = 'updated',
-  AWAITING_PAYMENT = 'awaiting payment',
-  COMPLETE = 'completed',
-  CANCELLED = 'cancelled',
+  CREATED = "created",
+  UPDATED = "updated",
+  AWAITING_PAYMENT = "awaiting payment",
+  COMPLETE = "completed",
+  CANCELLED = "cancelled",
 }
 
 export interface IOrderApi {
@@ -38,6 +38,7 @@ export interface INameId {
 export interface IFoodOrder {
   id?: number;
   itemQuantity: number;
+  itemName: string;
 }
 
 export interface IOrderItemsDB {
@@ -59,4 +60,4 @@ export interface IOrderItemsApi {
   orderItemPrice: number;
 }
 
-export type TOrderType = 'ALL' | 'PAID' | 'NOT_PAID';
+export type TOrderType = "ALL" | "PAID" | "NOT_PAID";
