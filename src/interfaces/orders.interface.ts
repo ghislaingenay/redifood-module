@@ -14,7 +14,7 @@ export interface IOrderApi {
   orderFinished: Date;
   orderTableNumber: number;
   orderTotal: number;
-  orderItems: IFoodOrder[];
+  orderItems: string; // JSON.parse to obtain IFoodOrder[]
   userId: string;
 }
 
@@ -26,7 +26,7 @@ export interface IOrderDB {
   order_finished: Date;
   order_table_number: number;
   order_total: number;
-  order_items: IFoodOrder[];
+  order_items: string; // JSON.parse to obtain IFoodOrder[]
   user_id: string;
 }
 
