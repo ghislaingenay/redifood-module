@@ -6,7 +6,7 @@ export enum EOrderStatus {
   CANCELLED = 'cancelled',
 }
 
-export interface IOrderApiItemsString {
+export interface IOrderApi<T = any> {
   id?: number;
   orderNo: string;
   orderStatus: EOrderStatus;
@@ -14,21 +14,9 @@ export interface IOrderApiItemsString {
   orderFinished: Date;
   orderTableNumber: number;
   orderTotal: number;
-  orderItems: string; // JSON.parse to obtain IFoodOrder[]
+  orderItems: T; // JSON.parse to obtain IFoodOrder[]
   userId: string;
 }
-export interface IOrderApiWithItems {
-  id?: number;
-  orderNo: string;
-  orderStatus: EOrderStatus;
-  orderCreatedDate: Date;
-  orderFinished: Date;
-  orderTableNumber: number;
-  orderTotal: number;
-  orderItems: IFoodOrder[]; // JSON.parse to obtain IFoodOrder[]
-  userId: string;
-}
-
 export interface IOrderDB {
   id?: number;
   order_no: number;
