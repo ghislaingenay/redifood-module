@@ -1,12 +1,12 @@
 export enum EOrderStatus {
-  CREATED = "created",
-  UPDATED = "updated",
-  AWAITING_PAYMENT = "awaiting payment",
-  COMPLETE = "completed",
-  CANCELLED = "cancelled",
+  CREATED = 'created',
+  UPDATED = 'updated',
+  AWAITING_PAYMENT = 'awaiting payment',
+  COMPLETE = 'completed',
+  CANCELLED = 'cancelled',
 }
 
-export interface IOrderApi {
+export interface IOrderApiItemsString {
   id?: number;
   orderNo: string;
   orderStatus: EOrderStatus;
@@ -15,6 +15,17 @@ export interface IOrderApi {
   orderTableNumber: number;
   orderTotal: number;
   orderItems: string; // JSON.parse to obtain IFoodOrder[]
+  userId: string;
+}
+export interface IOrderApiWithItems {
+  id?: number;
+  orderNo: string;
+  orderStatus: EOrderStatus;
+  orderCreatedDate: Date;
+  orderFinished: Date;
+  orderTableNumber: number;
+  orderTotal: number;
+  orderItems: IFoodOrder[]; // JSON.parse to obtain IFoodOrder[]
   userId: string;
 }
 
@@ -60,4 +71,4 @@ export interface IOrderItemsApi {
   orderItemPrice: number;
 }
 
-export type TOrderType = "ALL" | "PAID" | "NOT_PAID";
+export type TOrderType = 'ALL' | 'PAID' | 'NOT_PAID';
