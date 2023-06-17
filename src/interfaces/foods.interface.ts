@@ -71,3 +71,8 @@ export interface ISectionFoodDB {
   section_name: string;
   section_description?: string;
 }
+
+export interface IFoodSectionList {
+  id: number;
+  sectionName: string;
+}
