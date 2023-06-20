@@ -6,6 +6,8 @@ export interface IGetServerSideData<T = any, K = any> {
   statusCode?: number;
 }
 
+export type AsyncServer<T = any, K = any> = Promise<IGetServerSideData<T, K>>;
+
 export enum EStatusCodes {
   SUCCESS = 200,
   CREATED = 201,
@@ -17,11 +19,11 @@ export enum EStatusCodes {
 }
 
 export enum ECurrency {
-  USD = "USD",
-  EUR = "EUR",
+  USD = 'USD',
+  EUR = 'EUR',
 }
 
 export enum ELanguage {
-  ENGLISH = "en",
-  FRENCH = "fr",
+  ENGLISH = 'en',
+  FRENCH = 'fr',
 }
