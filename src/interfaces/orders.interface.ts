@@ -1,3 +1,5 @@
+import { IFoodGetApi } from './foods.interface';
+
 export enum EOrderStatus {
   CREATED = 'created',
   UPDATED = 'updated',
@@ -60,3 +62,8 @@ export interface IOrderItemsApi {
 }
 
 export type TOrderType = 'ALL' | 'PAID' | 'NOT_PAID';
+
+export interface IGetEditOrderRes {
+  order: IOrderApi;
+  orderItems: IFoodGetApi[];
+}
