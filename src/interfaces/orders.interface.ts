@@ -1,4 +1,4 @@
-import { IFoodApi, IFoodGetApi, IFoodSectionList } from './foods.interface';
+import { IFoodApi, IFoodSectionList } from './foods.interface';
 
 export enum EOrderStatus {
   CREATED = 'created',
@@ -66,6 +66,6 @@ export type TOrderType = 'ALL' | 'PAID' | 'NOT_PAID';
 export interface IGetEditOrderRes {
   order: IOrderApi;
   orderItems: IFoodApi[];
-  foodList: IFoodGetApi[];
+  foodList: IFoodApi[];
   foodSection: IFoodSectionList[];
 }
