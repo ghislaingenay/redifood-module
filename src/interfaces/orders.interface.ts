@@ -2,7 +2,6 @@ import { IFoodApi, IFoodSectionList } from "./foods.interface";
 
 export enum EOrderStatus {
   CREATED = "created",
-  UPDATED = "updated",
   AWAITING_PAYMENT = "awaiting payment",
   COMPLETE = "finished",
   CANCELLED = "cancelled",
