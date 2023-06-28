@@ -27,3 +27,10 @@ export enum ELanguage {
   ENGLISH = 'en',
   FRENCH = 'fr',
 }
+
+export interface IPagination {
+  page: number;
+  results: number;
+  pages: number;
+  total: number;
+}
