@@ -1,10 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface IGetServerSideData<T = any, K = any> {
   results?: T | null;
-  message: string | unknown;
+  message: string;
   params?: K;
   statusCode?: number;
 }
+
+export type AsyncServer<T = any, K = any> = Promise<IGetServerSideData<T, K>>;
 
 export enum EStatusCodes {
   SUCCESS = 200,
@@ -17,11 +19,18 @@ export enum EStatusCodes {
 }
 
 export enum ECurrency {
-  USD = "USD",
-  EUR = "EUR",
+  USD = 'USD',
+  EUR = 'EUR',
 }
 
 export enum ELanguage {
-  ENGLISH = "en",
-  FRENCH = "fr",
+  ENGLISH = 'en',
+  FRENCH = 'fr',
+}
+
+export interface IPagination {
+  page: number;
+  results: number;
+  pages: number;
+  total: number;
 }

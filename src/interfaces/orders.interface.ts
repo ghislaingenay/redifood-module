@@ -1,32 +1,75 @@
-import { IFoodApi, IFoodDB } from "./foods.interface";
-import { ECurrency } from "./global.interface";
+import { IFoodApi, IFoodSectionList } from "./foods.interface";
 
 export enum EOrderStatus {
   CREATED = "created",
-  UPDATED = "updated",
   AWAITING_PAYMENT = "awaiting payment",
-  COMPLETE = "completed",
+  COMPLETE = "finished",
+  CANCELLED = "cancelled",
 }
 
-export interface IOrderApi {
-  _id?: string;
-  orderNo: number;
+export interface IOrderApi<T = any> {
+  id?: number;
+  orderNo: string;
   orderStatus: EOrderStatus;
   orderCreatedDate: Date;
-  orderCompleteDate: Date;
-  tableNumber: number;
+  orderFinished: Date;
+  orderTableNumber: number;
   orderTotal: number;
-  orderItems: IFoodApi[];
-  orderCurrency: ECurrency;
+  orderItems: T; // JSON.parse to obtain IFoodOrder[]
+  userId: string;
 }
 export interface IOrderDB {
-  _id?: string;
+  id?: number;
   order_no: number;
   order_status: EOrderStatus;
   order_created_date: Date;
-  order_complete_date: Date;
-  table_number: number;
+  order_finished: Date;
+  order_table_number: number;
   order_total: number;
-  order_items: IFoodDB[];
-  order_currency: ECurrency;
+  order_items: string; // JSON.parse to obtain IFoodOrder[]
+  user_id: string;
+}
+
+export interface INameId {
+  name: string;
+  id: number;
+}
+
+export interface IFoodOrder {
+  id?: number;
+  itemQuantity: number;
+  itemName: string;
+}
+
+export interface IOrderItemsDB {
+  id?: number;
+  order_id: number;
+  user_id: string;
+  food_id: number;
+  order_item_quantity: number;
+  order_item_name: string;
+  order_item_price: number;
+}
+export interface IOrderItemsApi {
+  id?: number;
+  orderId: number;
+  userId: string;
+  foodId: number;
+  orderItem_Quantity: number;
+  orderItemName: string;
+  orderItemPrice: number;
+}
+
+export type TOrderType = "ALL" | "PAID" | "NOT_PAID";
+
+export interface IGetEditOrderRes {
+  order: IOrderApi;
+  orderItems: IFoodApi[];
+  foodList: IFoodApi[];
+  foodSection: IFoodSectionList[];
+}
+
+export interface IGetOneOrder {
+  currentOrder: IOrderApi<IFoodOrder[]>;
+  foodList: IFoodApi[];
 }
