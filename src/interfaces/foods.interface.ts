@@ -76,3 +76,12 @@ export interface IFoodSectionList {
   id: number;
   sectionName: string;
 }
+
+export interface IFoodSectionListWithExtra extends IFoodSectionList {
+  extraList: IExtraApi[];
+}
+
+export interface IGetSectionInfo {
+  listing: IFoodSectionListWithExtra[];
+  foods: IFoodGetApi[];
+}
