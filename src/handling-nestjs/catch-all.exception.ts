@@ -5,6 +5,8 @@ import {
   HttpException,
   HttpStatus,
 } from '@nestjs/common';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-ignore
 import { HttpAdapterHost } from '@nestjs/core';
 
 @Catch()

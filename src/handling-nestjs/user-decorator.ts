@@ -1,5 +1,5 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
-import { TUser } from 'redifood-module/src/interfaces';
+import { TUser } from '../interfaces';
 
 export const User = createParamDecorator(
   (data: unknown, ctx: ExecutionContext) => {
