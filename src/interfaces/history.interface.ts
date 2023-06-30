@@ -1,9 +1,10 @@
 import { IPagination } from "./global.interface";
 import { IOrderApi } from "./orders.interface";
 
+export type DateOrString = Date | string;
 export type TGetHistoryParams = {
-  startDate?: Date;
-  endDate?: Date;
+  startDate?: DateOrString;
+  endDate?: DateOrString;
   page: number;
   results: number;
 };
