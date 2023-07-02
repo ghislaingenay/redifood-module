@@ -1,10 +1,14 @@
-import { IFoodApi, IFoodSectionList } from "./foods.interface";
+import {
+  IFoodApi,
+  IFoodGetApi,
+  IFoodSectionListWithExtra,
+} from './foods.interface';
 
 export enum EOrderStatus {
-  CREATED = "created",
-  AWAITING_PAYMENT = "awaiting payment",
-  COMPLETE = "finished",
-  CANCELLED = "cancelled",
+  CREATED = 'created',
+  AWAITING_PAYMENT = 'awaiting payment',
+  COMPLETE = 'finished',
+  CANCELLED = 'cancelled',
 }
 
 export interface IOrderApi<T = any> {
@@ -60,16 +64,16 @@ export interface IOrderItemsApi {
   orderItemPrice: number;
 }
 
-export type TOrderType = "ALL" | "PAID" | "NOT_PAID";
+export type TOrderType = 'ALL' | 'PAID' | 'NOT_PAID';
 
 export interface IGetEditOrderRes {
   order: IOrderApi;
   orderItems: IFoodApi[];
-  foodList: IFoodApi[];
-  foodSection: IFoodSectionList[];
+  foodList: IFoodGetApi[];
+  foodSectionExtra: IFoodSectionListWithExtra[];
 }
 
 export interface IGetOneOrder {
   currentOrder: IOrderApi<IFoodOrder[]>;
-  foodList: IFoodApi[];
+  foodList: IFoodGetApi[];
 }
