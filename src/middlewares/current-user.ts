@@ -1,6 +1,6 @@
-import { NextFunction, Response } from 'express';
+import { NextFunction, Response } from "express";
 
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
 
 interface UserPayload {
   id: string;
@@ -8,7 +8,7 @@ interface UserPayload {
 }
 
 // Middleware that extract the JWT payload and set it on 'req.currentUser'
-export const currentUser = (req: any, res: Response, next: NextFunction) => {
+export const currentUser = (req: any, _: Response, next: NextFunction) => {
   if (!req.session?.jwt) {
     return next();
   }
